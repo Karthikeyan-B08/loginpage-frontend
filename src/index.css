@@ -1,0 +1,57 @@
+/* index.css - Global styles & CSS variables */
+
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-card: #1a1a2e;
+  --bg-tertiary: #22223b;
+
+  --text-primary: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-muted: #9ca3af;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --accent: #6c5ce7;
+  --accent-hover: #5a4bd6;
+  --accent-light: rgba(108, 92, 231, 0.2);
+
+  --success: #00b894;
+  --error: #d63031;
+
+  --shadow-lg: rgba(0, 0, 0, 0.4);
+
+  --gradient-primary: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
