@@ -13,7 +13,7 @@ function Forgotpwd() {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:8080/api/user/send-forgot-password-email", { email });
+      await axios.post("https://loginpage-backend-production.up.railway.app/api/user/send-forgot-password-email", { email });
       setMessage("Reset link sent to your email!");
     } catch (err) {
       setMessage("Error sending reset link");

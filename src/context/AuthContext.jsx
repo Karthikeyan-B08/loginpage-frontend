@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AuthContext = createContext();
 
-const BASE_URL = "http://localhost:8080/api/user";
+const BASE_URL = "https://loginpage-backend-production.up.railway.app/api/user";
 
 export const AuthProvider = ({ children }) => {
 
@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   };
 
 const login = async (email, pwd) => {
-  const res = await axios.post("http://localhost:8080/api/user/login", {
+  const res = await axios.post("https://loginpage-backend-production.up.railway.app/api/user/login", {
     email: email,
     pwd: pwd
   });

@@ -141,7 +141,7 @@ function RegisterPage() {
 
     setLoading(true)
    try {
-    await axios.post("http://localhost:8080/api/user/register", {
+    await axios.post("https://loginpage-backend-production.up.railway.app/api/user/register", {
       email: formData.email,
       pwd: formData.password,
       image: formData.profileImage || "https://via.placeholder.com/150"
