@@ -172,21 +172,38 @@ function ProfileUpdatePage() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
+      </div>
+      )}
+
       {details && details.length > 0 && (
   <div className="user-details">
     <h3>All Users</h3>
-    {details.map((user, index) => (
-      <div key={index} className="user-card">
-        <p>Email: {user.email}</p>
-        <p>Password: {user.pwd}</p>
-        {user.image && <img src={user.image} alt="Profile" width="100" />}
-      </div>
-    ))}
+    <table className="user-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Profile Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {details.map((user, index) => (
+          <tr key={index}>
+            <td>{user.email}</td>
+            <td>{user.pwd}</td>
+            <td>
+              {user.image ? (
+                <img src={user.image} alt="Profile" width="50" />
+              ) : (
+                "No Image"
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </div>
 )}
-
-      </div>
-      )}
     </div>
   );
 }
