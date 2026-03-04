@@ -19,6 +19,31 @@ function ProfileUpdatePage() {
   const [loading, setLoading] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
+
+
+
+   const [details, setDetails] = useState(null); 
+  const [error, setError] = useState("");
+
+  const handledisplay = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await axios.get(
+        "https://loginpage-backend-production.up.railway.app/api/user/details"
+      );
+      setDetails(response.data); 
+    } catch (err) {
+      console.error(err);
+      setError("Failed to fetch details");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
+
   useEffect(() => {
     if (user) {
       setFormData({
@@ -139,6 +164,21 @@ function ProfileUpdatePage() {
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>
+
+       <button className="logout-btn" onClick={handledisplay}>
+        {loading ? "Loading..." : "Display Details"}
+      </button>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {details && (
+        <div className="user-details">
+          <h3>User Details</h3>
+          <p>Name: {details.name}</p>
+          <p>Email: {details.email}</p>
+          {/* Add more fields depending on what your backend returns */}
+        </div>
+      )}
 
       </div>
       )}
