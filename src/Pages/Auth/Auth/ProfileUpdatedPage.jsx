@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import "./Profile.css";
+import axios from "axios";
 
 function ProfileUpdatePage() {
 
