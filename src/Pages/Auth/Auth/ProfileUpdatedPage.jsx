@@ -175,6 +175,7 @@ function ProfileUpdatePage() {
       </div>
       )}
 
+<div className="table">
       {details && details.length > 0 && (
   <div className="user-details">
     <h3>All Users</h3>
@@ -204,6 +205,7 @@ function ProfileUpdatePage() {
     </table>
   </div>
 )}
+</div>
     </div>
   );
 }
