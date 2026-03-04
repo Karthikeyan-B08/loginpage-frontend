@@ -171,14 +171,18 @@ function ProfileUpdatePage() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      {details && (
-        <div className="user-details">
-          <h3>User Details</h3>
-          <p>Name: {details.name}</p>
-          <p>Email: {details.email}</p>
-          {/* Add more fields depending on what your backend returns */}
-        </div>
-      )}
+      {details && details.length > 0 && (
+  <div className="user-details">
+    <h3>All Users</h3>
+    {details.map((user, index) => (
+      <div key={index} className="user-card">
+        <p>Email: {user.email}</p>
+        <p>Password: {user.pwd}</p>
+        {user.image && <img src={user.image} alt="Profile" width="100" />}
+      </div>
+    ))}
+  </div>
+)}
 
       </div>
       )}
